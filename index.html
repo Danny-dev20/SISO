@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>For Siso 💖</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="floating-hearts">
+        <span style="left:10%">💗</span>
+        <span style="left:25%">💖</span>
+        <span style="left:40%">💕</span>
+        <span style="left:55%">💞</span>
+        <span style="left:70%">💘</span>
+        <span style="left:85%">💓</span>
+    </div>
+
+    <audio id="bgMusic" autoplay loop>
+        <source src="Digitallove.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- All pages use a .text span so the typewriter can target it safely -->
+    <div class="page active" id="page1"><span class="text">Hey Siso 💞 Wanna see what’s in here?</span></div>
+    <div class="page" id="page2"><span class="text">Remember when we first met? It was the 29th of October... I didn’t
+            know one small moment would turn into something this special 🥹</span></div>
+    <div class="page" id="page3"><span class="text">You make me laugh when I don’t want to, and smile when I shouldn’t.
+            You just have that effect, don’t you? 😳</span></div>
+    <div class="page" id="page4"><span class="text">You’re one of the best people I’ve ever met. Cute, funny, and real.
+            You make me feel safe just by being you 💕</span></div>
+    <div class="page" id="page5"><span class="text">So... I have something to ask. Something that’s been in my mind
+            every time I think about you 👀</span></div>
+
+    <div id="page6" class="page">
+        <span class="text">Will you be my boyfriend? 💖</span><br><br>
+        <button id="yesBtn">Yes 😍</button>
+        <button id="noBtn">No 😆</button>
+    </div>
+
+    <div id="page7" class="page">
+        <span class="text">YAY!!! 🎉 You said yes!!<br><br>
+            From now on, it’s <b>Amjed 💕 Siso</b> forever 😘
+        </span><br><br>
+        <button id="continueBtn" class="menuBtn" style="display:none;">Continue 💫</button>
+    </div>
+    <div id="menuPage" class="page">
+        <h2>💌 For My Siso 💌</h2>
+        <button class="menuBtn" onclick="openSection('love')">Why I love you 💖</button>
+        <button class="menuBtn" onclick="openSection('memories')">Our memories 📸</button>
+        <button class="menuBtn" onclick="openSection('future')">Our future ✨</button>
+    </div>
+
+    <!-- Hidden sections -->
+    <div id="love" class="page">
+        <span class="text">I love you because you make every day brighter, every moment softer, and every laugh sweeter
+            💕</span>
+    </div>
+    <div id="memories" class="page">
+        <span class="text">Remember the first time we talked? I didn’t know then that you’d mean so much to me 🥹</span>
+    </div>
+    <div id="future" class="page">
+        <span class="text">I can’t wait to see where life takes us — but I hope every chapter still starts with “Amjed
+            💕 Siso” 💫</span>
+    </div>
+
+    <button id="nextBtn">Next ➡️</button>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
