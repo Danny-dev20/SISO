@@ -45,11 +45,26 @@ yesBtn.addEventListener('click', () => {
   pageIndex = 6;
   showPage(pageIndex);
   spawnHearts();
-
   document.body.classList.add('love-mode');
+
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach(btn => {
+    btn.style.background = '#fff'; 
+    btn.style.color = ' #ff003c';
+  });
+
+  const style = document.createElement('style');
+  style.textContent = `
+    button:hover {
+      background: #ff4d88 !important;
+      transform: scale(1.1);
+    }
+  `;
+  document.head.appendChild(style);
 
   setTimeout(() => continueBtn.style.display = 'inline-block', 2000);
 });
+
 
 noBtn.addEventListener('mouseover', () => {
   noBtn.style.position = 'absolute';
