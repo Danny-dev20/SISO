@@ -6,7 +6,6 @@ const continueBtn = document.getElementById('continueBtn');
 const menuPage = document.getElementById('menuPage');
 let pageIndex = 0;
 
-// show page function
 function showPage(i) {
   pages.forEach(p => p.classList.remove('active'));
   const page = pages[i];
@@ -15,7 +14,6 @@ function showPage(i) {
   const textSpan = page.querySelector('.text');
   if (textSpan) typeText(textSpan);
 
-  // hide nextBtn on question or menu pages
   if (i === 5 || i === 6 || page.id === "menuPage") {
     nextBtn.style.display = 'none';
   } else {
@@ -23,7 +21,6 @@ function showPage(i) {
   }
 }
 
-// typewriter effect
 function typeText(element, speed = 25) {
   const full = element.textContent;
   element.textContent = "";
@@ -39,38 +36,32 @@ function typeText(element, speed = 25) {
   }, speed);
 }
 
-// next button
 nextBtn.addEventListener('click', () => {
   pageIndex++;
   if (pageIndex < pages.length) showPage(pageIndex);
 });
 
-// yes button
 yesBtn.addEventListener('click', () => {
   pageIndex = 6;
   showPage(pageIndex);
   spawnHearts();
 
-  // make background more red ❤️
   document.body.classList.add('love-mode');
 
   setTimeout(() => continueBtn.style.display = 'inline-block', 2000);
 });
 
-// no button (runaway)
 noBtn.addEventListener('mouseover', () => {
   noBtn.style.position = 'absolute';
   noBtn.style.top = Math.random() * 80 + 'vh';
   noBtn.style.left = Math.random() * 80 + 'vw';
 });
 
-// continue button
 continueBtn.addEventListener('click', () => {
   pageIndex = [...pages].indexOf(menuPage);
   showPage(pageIndex);
 });
 
-// open section (with back button support)
 function openSection(id) {
   const target = document.getElementById(id);
   if (target) {
@@ -79,7 +70,6 @@ function openSection(id) {
   }
 }
 
-// create a back button dynamically
 function addBackButton(section) {
   if (!section.querySelector('.backBtn')) {
     const backBtn = document.createElement('button');
@@ -100,17 +90,15 @@ function spawnHearts() {
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 6000);
   }
+  setTimeout(spawnHearts, 3000);
+
 }
 
-// make hearts keep spawning every few seconds 💕
-setInterval(spawnHearts, 3000);
-
-// music autoplay + start typing
 window.addEventListener('load', () => {
   const music = document.getElementById('bgMusic');
   music.volume = 0.3;
   const playMusic = () => {
-    music.play().catch(() => {});
+    music.play().catch(() => { });
     document.removeEventListener('click', playMusic);
   };
   document.addEventListener('click', playMusic);
