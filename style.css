@@ -20,9 +20,14 @@
  }
 
  @keyframes dreamyMove {
-  0% { transform: scale(1) translate(0, 0); }
-  100% { transform: scale(1.3) translate(-40px, 40px); }
-}
+     0% {
+         transform: scale(1) translate(0, 0);
+     }
+
+     100% {
+         transform: scale(1.3) translate(-40px, 40px);
+     }
+ }
 
 
  body::after {
@@ -229,6 +234,42 @@
      transform: scale(1.1);
  }
 
+ .love-mode {
+  position: relative;
+  animation: loveGlow 6s ease-in-out infinite alternate;
+}
+
+.love-mode::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 51, 102, 0.562), rgba(255, 153, 170, 0.2));
+  z-index: -1;
+  opacity: 0;
+  animation: softFade 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes softFade {
+  0% { opacity: 0.2; filter: brightness(1); }
+  50% { opacity: 0.5; filter: brightness(1.1); }
+  100% { opacity: 0.9; filter: brightness(1.05); }
+}
+
+ @keyframes glowFade {
+     0% {
+         opacity: 0;
+         transform: scale(0.9);
+     }
+
+     100% {
+         opacity: 1;
+         transform: scale(1);
+     }
+ }
 
  /* 🌸 Mobile Responsive Tweaks */
  @media (max-width: 768px) {
@@ -241,7 +282,7 @@
      .page {
          max-width: 90%;
          padding: 20px 15px;
-         font-size: 2rem;
+         font-size: 3rem;
          border-radius: 20px;
          box-shadow: 0 6px 18px rgba(255, 105, 180, 0.25);
      }
@@ -252,7 +293,7 @@
      #nextBtn,
      #continueBtn {
          padding: 10px 20px;
-         font-size: 0.95rem;
+         font-size: 1.2rem;
          margin: 8px;
          border-radius: 22px;
          width: 80%;
@@ -260,12 +301,12 @@
      }
 
      .floating-hearts span {
-         font-size: 1.8rem;
+         font-size: 2rem;
          opacity: 0.25;
      }
 
      h2 {
-         font-size: 1.6rem;
+         font-size: 2rem;
      }
 
      .text {
@@ -277,7 +318,7 @@
  @media (max-width: 420px) {
      .page {
          padding: 15px 12px;
-         font-size: 0.9rem;
+         font-size: 1.2rem;
      }
 
      #yesBtn,
@@ -285,11 +326,11 @@
      .menuBtn,
      #nextBtn,
      #continueBtn {
-         font-size: 0.85rem;
+         font-size: 1rem;
          padding: 8px 18px;
      }
 
      h2 {
-         font-size: 1.1rem;
+         font-size: 1.3rem;
      }
  }

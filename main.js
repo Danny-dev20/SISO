@@ -50,6 +50,10 @@ yesBtn.addEventListener('click', () => {
   pageIndex = 6;
   showPage(pageIndex);
   spawnHearts();
+
+  // make background more red ❤️
+  document.body.classList.add('love-mode');
+
   setTimeout(() => continueBtn.style.display = 'inline-block', 2000);
 });
 
@@ -86,7 +90,6 @@ function addBackButton(section) {
   }
 }
 
-// hearts
 function spawnHearts() {
   for (let i = 0; i < 25; i++) {
     const heart = document.createElement('div');
@@ -98,6 +101,9 @@ function spawnHearts() {
     setTimeout(() => heart.remove(), 6000);
   }
 }
+
+// make hearts keep spawning every few seconds 💕
+setInterval(spawnHearts, 3000);
 
 // music autoplay + start typing
 window.addEventListener('load', () => {
